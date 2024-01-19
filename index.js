@@ -26,15 +26,18 @@ const cosasQueAprendimos = [
 ];
 
 function main() {
-  const elLista = document.querySelector('.list');
-  elLista.replaceChildren();
+  const listaEl = document.querySelector('.lista');
+  const itemsElm = document.querySelectorAll('.lista li');
 
-  cosasAprendidas.forEach((elem) => {
-    const nuevoElLi = document.createElement(´li´);
-    nueevoElLi.innerText = elem.tema;
-    if (elem.class.lenght > 0)
-      nuevoElLi.classList.add(elem.class);
-    elLista.appens(nuevoElLi);
-});
+  for(let el of itemsElm) {
+    el.remove();
+  }
+  for(let item of cosasQueAprendimos){
+    const newLiElem = document.createElement("li")
+    newLiEl.textContent = item.tema;
+    newLiEl.classList.add(item.class || "item");
 
+    listaEl.appendChild(newLiEl);
+  }
+};
 main();
